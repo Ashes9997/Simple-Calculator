@@ -58,6 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
       expression.textContent = exp || "_";
   }
 
+  const calculateSQRT = () => {
+    // console.log("sqroot");
+    const sqrt = Math.sqrt(exp);
+    if (sqrt.toString() !== "NaN") {
+      result.textContent = sqrt.toFixed(4);
+      errorText.textContent = "";
+    } else {
+      errorText.textContent = "not a valid input";
+    }
+
+    // console.log("sqroot", sqrt);
+  };
+
   window.makeExp = makeExp;
   window.makeResult = makeResult;
   window.clearAll = clearAll;
