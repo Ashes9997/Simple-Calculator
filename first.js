@@ -39,11 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function makeResult() {
-      try {
-          const mresult = eval(exp);
-          result.textContent = mresult;
-      } catch (e) {
-          result.textContent = "Error";
+    try {
+      if (exp) {
+        const mresult = eval(exp);
+        result.textContent = mresult;
+      } else {
+        errorText.textContent = " Not a valid Expression";
       }
   }
 
