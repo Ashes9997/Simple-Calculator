@@ -1,35 +1,40 @@
-// // let exp = "";
-
-// let exp = "";
-// const expression = document.querySelector(".expression"); 
-// const result = document.querySelector(".result"); 
-// function makeExp(char){  
-//     exp += char;    
-//      expression.textContent = exp;
-//      console.log(exp)
-     
-// }
-
-
-
-
-// function makeResult(){
-//    const mresult = eval(exp);
-//    console.log(mresult);
-//    result.textContent =  mresult;
-
-
-
-
-//  }
-//  console.log(result);
 document.addEventListener("DOMContentLoaded", () => {
   let exp = "";
-  const expression = document.querySelector(".expression"); 
+  const expression = document.querySelector(".expression");
   const result = document.querySelector(".result");
+  const errorText = document.querySelector(".errorText");
 
   function makeExp(char) {
-      exp += char;    
+    let temp = exp + char;
+    if (
+      !temp.includes("++") &&
+      !temp.includes("--") &&
+      !temp.includes("+-") &&
+      !temp.includes("-+") &&
+      !temp.includes("**") &&
+      !temp.includes("//") &&
+      !temp.includes("+*") &&
+      !temp.includes("+/") &&
+      !temp.includes("-*") &&
+      !temp.includes("-/") &&
+      !temp.includes("*+") &&
+      !temp.includes("*-") &&
+      !temp.includes("*/") &&
+      !temp.includes("/+") &&
+      !temp.includes("/-") &&
+      !temp.includes("/*") &&
+      !temp.includes("//") &&
+      !temp.includes("%+") &&
+      !temp.includes("%-") &&
+      !temp.includes("%*") &&
+      !temp.includes("%/") &&
+      !temp.includes("+%") &&
+      !temp.includes("-%") &&
+      !temp.includes("*%") &&
+      !temp.includes("/%")
+    ) {
+      // console.log("temp ", temp);
+      exp += char;
       expression.textContent = exp;
   }
 
@@ -57,8 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.makeResult = makeResult;
   window.clearAll = clearAll;
   window.deleteLast = deleteLast;
+  window.calculateSQRT = calculateSQRT;
 });
-
-
-
- 
